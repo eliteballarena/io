@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tournament Table - Efootball Ghana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('images/tournament-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    /* NAVIGATION BAR */
+    nav {
+      background-color: rgba(0, 0, 0, 0.9);
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-icon span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+      padding: 6px 10px;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover {
+      background-color: #444;
+      border-radius: 5px;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 30px;
+      background: #222;
+      padding: 10px;
+      border-radius: 5px;
+      flex-direction: column;
+      z-index: 999;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: flex;
+    }
+
+    .dropdown-menu li {
+      padding: 5px 0;
+    }
+
+    .dropdown-menu li a {
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: flex;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        margin-top: 10px;
+        padding: 10px;
+      }
+
+      #menu-toggle:checked + .menu-icon + ul {
+        display: flex;
+      }
+
+      nav ul li {
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .dropdown-menu {
+        position: static;
+        background: #222;
+        padding-left: 10px;
+      }
+    }
+
+    /* TOURNAMENT TABLE */
+    .table-section {
+      padding: 40px 20px;
+      color: #fff;
+    }
+
+    .table-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    .table-wrapper {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      overflow-x: auto;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 700px;
+      background: transparent;
+      color: #fff;
+    }
+
+    thead {
+      background-color: rgba(30, 30, 30, 0.9);
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+      font-size: 14px;
+      border-bottom: 1px solid #999;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    tbody tr:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.9);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="index.html" class="logo">
+    <img src="images/logo.png" alt="Efootball Logo">
+  </a>
+
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="fixtures.html">Fixtures</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="rules.html">Rules</a></li>
+    <li class="dropdown">
+      <a href="#">Media ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="videos.html">Videos</a></li>
+      </ul>
+    </li>
+    <li><a href="tournament.html">League Table</a></li>
+  </ul>
+</nav>
+
+<!-- TOURNAMENT TABLE -->
+<section class="table-section">
+  <h2>Tournament Table</h2>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Player</th>
+          <th>MP</th>
+          <th>W</th>
+          <th>D</th>
+          <th>L</th>
+          <th>GF</th>
+          <th>GA</th>
+          <th>GD</th>
+          <th>Pts</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Kofi</td>
+          <td>4</td>
+          <td>4</td>
+          <td>0</td>
+          <td>0</td>
+          <td>10</td>
+          <td>2</td>
+          <td>+8</td>
+          <td>12</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Yaw</td>
+          <td>4</td>
+          <td>3</td>
+          <td>0</td>
+          <td>1</td>
+          <td>9</td>
+          <td>4</td>
+          <td>+5</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Malik</td>
+          <td>4</td>
+          <td>1</td>
+          <td>1</td>
+          <td>2</td>
+          <td>4</td>
+          <td>7</td>
+          <td>-3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Kojo</td>
+          <td>4</td>
+          <td>0</td>
+          <td>1</td>
+          <td>3</td>
+          <td>2</td>
+          <td>10</td>
+          <td>-8</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 Eliteball Arena. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

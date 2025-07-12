@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fixtures - Eliteball Arena</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Responsive Navigation Styles */
+    nav {
+      background-color: #111;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .logo img {
+      height: 40px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      padding: 8px 12px;
+      transition: background 0.3s;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover {
+      background-color: #444;
+      border-radius: 5px;
+    }
+
+    /* Mobile nav toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    #menu-checkbox {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        margin-top: 10px;
+      }
+
+      #menu-checkbox:checked + .menu-toggle + ul {
+        display: flex;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* Fixture styles */
+    .page-header {
+      text-align: center;
+      background: #222;
+      color: #fff;
+      padding: 40px 20px;
+    }
+
+    .fixtures-list {
+      padding: 30px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .fixture-card {
+      background: #181818;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .fixture-card h3 {
+      margin-top: 0;
+    }
+
+    footer {
+      text-align: center;
+      background: #111;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body class="fixtures-page">
+
+  <!-- Responsive Navigation -->
+  <nav>
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="Logo"></a>
+    </div>
+
+    <input type="checkbox" id="menu-checkbox">
+    <label for="menu-checkbox" class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+     <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="fixtures.html">Fixtures</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="rules.html">Rules</a></li>
+    <li class="dropdown">
+      <a href="#">Media ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="videos.html">Videos</a></li>
+      </ul>
+    </li>
+    <li><a href="tournament.html">League Table</a></li>
+  </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="page-header">
+    <h1>Fixtures</h1>
+    <p>Match Schedule for the Tournament</p>
+  </header>
+
+  <!-- Fixtures List -->
+  
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Eliteball Arena. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

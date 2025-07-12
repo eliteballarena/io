@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tournament Rules - Efootball Kumasi</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* NAV STYLES (same as home and fixtures) */
+    nav {
+      background-color: #111;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    nav .logo img {
+      height: 40px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      padding: 8px 12px;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      background: #444;
+      border-radius: 5px;
+    }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+    #menu-checkbox {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #111;
+      }
+      #menu-checkbox:checked + .menu-toggle + ul {
+        display: flex;
+      }
+      nav ul li {
+        width: 100%;
+      }
+    }
+
+    .page-header {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .tournament-rules {
+      padding: 30px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .tournament-rules h2 {
+      margin-top: 30px;
+      font-size: 20px;
+      color: #e4abab;
+    }
+
+    .tournament-rules ul {
+      list-style: none;
+      padding-left: 20px;
+    }
+
+    .tournament-rules ul li {
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .download-section {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .download-btn {
+      background-color: #d32f2f;
+      color: #fff;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .download-btn:hover {
+      background-color: #b71c1c;
+    }
+
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body class="rules-page">
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="Efootball Logo"></a>
+    </div>
+    <input type="checkbox" id="menu-checkbox">
+    <label for="menu-checkbox" class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+     <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="fixtures.html">Fixtures</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="rules.html">Rules</a></li>
+    <li class="dropdown">
+      <a href="#">Media ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="videos.html">Videos</a></li>
+      </ul>
+    </li>
+    <li><a href="tournament.html">League Table</a></li>
+  </ul>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="page-header">
+    <h1>Tournament Rules</h1>
+    <p>Please read and follow all rules before participating</p>
+  </header>
+
+  <!-- RULES SECTION -->
+  <section class="tournament-rules">
+    <h2>General Rules</h2>
+    <ul>
+      <li>✅ All players must pay before being added to fixtures.</li>
+      <li>🎮 Only the latest version of eFootball Mobile is allowed.</li>
+      <li>⏰ Be punctual. Players are disqualified after 10 minutes of lateness.</li>
+      <li>📸 Winners must submit match screenshots immediately after each game.</li>
+      <li>🚫 Cheating or quitting intentionally leads to disqualification.</li>
+      <li>⚖️ Disputes are handled by organizers. Decisions are final.</li>
+    </ul>
+
+    <h2>Match Settings</h2>
+    <ul>
+      <li>⏱ Match time: 5 minutes per half</li>
+      <li>🎯 Penalties: On (for knockout rounds only)</li>
+      <li>⚽ Match Type: Friendly Lobby or Standard Match</li>
+      <li>📶 Use a stable and reliable internet connection</li>
+    </ul>
+  </section>
+
+  <!-- PDF DOWNLOAD -->
+  <div class="download-section">
+    <a href="efootball-rules.pdf" class="download-btn" download>
+      📄 Download Tournament Rules (PDF)
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Eliteball Arena. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

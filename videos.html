@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Match Videos - Efootball Ghana</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+    }
+
+    /* NAVIGATION */
+    .navbar {
+      background-color: #111;
+      padding: 10px 20px;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+
+    .menu-icon span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      border-radius: 2px;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-links li a.active,
+    .nav-links li a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: #222;
+      margin-top: 10px;
+      list-style: none;
+      padding: 10px 0;
+      z-index: 10;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-menu li a {
+      padding: 10px 20px;
+      display: block;
+      color: white;
+    }
+
+    /* MOBILE NAVIGATION */
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #111;
+        margin-top: 10px;
+      }
+
+      #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+        padding: 10px 20px;
+      }
+
+      .dropdown-menu {
+        position: static;
+        background: #222;
+        padding-left: 20px;
+      }
+    }
+
+    /* HEADER */
+    .page-header {
+      background: #222;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    /* VIDEO SECTION */
+    .video-section {
+      padding: 40px 20px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .video-card iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .video-card iframe {
+        height: 250px;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Efootball Logo" />
+        </a>
+      </div>
+
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="fixtures.html">Fixtures</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li class="dropdown">
+          <a href="#">Media ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="videos.html" class="active">Videos</a></li>
+          </ul>
+        </li>
+        <li><a href="tournament.html">League Table</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Match Videos</h1>
+    <p>Watch full match replays from the tournament</p>
+  </header>
+
+  <!-- Video Section -->
+  <section class="video-section">
+    <div class="video-grid">
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Match 1" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="Match 2" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="Match 3" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Eliteball Arena. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

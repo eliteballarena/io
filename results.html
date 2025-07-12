@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Results - Eliteball Arena Tournament</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* NAVIGATION STYLING */
+    nav {
+      background-color: #111;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    nav .logo img {
+      height: 40px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      padding: 8px 12px;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      background: #444;
+      border-radius: 5px;
+    }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+    #menu-checkbox {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #111;
+      }
+      #menu-checkbox:checked + .menu-toggle + ul {
+        display: flex;
+      }
+      nav ul li {
+        width: 100%;
+      }
+    }
+
+    /* HEADER */
+    .page-header {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    /* RESULTS SECTION */
+    .results-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 30px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .result-card {
+      background-color: #0a0a0a;
+      border-left: 5px solid #2196f3;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .result-card.win {
+      border-left-color: #4caf50;
+    }
+
+    .result-card.draw {
+      border-left-color: #ff9800;
+    }
+
+    .result-card h3 {
+      margin-top: 0;
+      color: #e9e6e6;
+    }
+
+    .result-card p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body class="results-page">
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="Efootball Logo"></a>
+    </div>
+    <input type="checkbox" id="menu-checkbox">
+    <label for="menu-checkbox" class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+     <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="fixtures.html">Fixtures</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="rules.html">Rules</a></li>
+    <li class="dropdown">
+      <a href="#">Media ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="videos.html">Videos</a></li>
+      </ul>
+    </li>
+    <li><a href="tournament.html">League Table</a></li>
+  </ul>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="page-header">
+    <h1>Match Results</h1>
+    <p>Final scores from completed matches</p>
+  </header>
+
+  <!-- RESULTS SECTION -->
+ 
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Eliteball Arena. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
